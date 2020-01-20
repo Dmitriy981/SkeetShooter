@@ -18,7 +18,6 @@ namespace Gameplay
         
         public void BlowUp()
         {
-            EventsManager.Instance.Send(EventKeys.PlateDestroy);
             Destroy(gameObject);
         }
         
@@ -43,6 +42,7 @@ namespace Gameplay
             {
                 _destroyAudio.Play();
                 BlowUp();
+                EventsManager.Instance.Send(EventKeys.PlayerIsReady);
             }
         }
     }

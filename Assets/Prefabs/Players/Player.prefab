@@ -102,6 +102,7 @@ MonoBehaviour:
   _speedY: 0.1
   _availableRotaionByX: {x: -45, y: 45}
   _availableRotaionByY: {x: -90, y: 90}
+  _timeToReturning: 1
 --- !u!114 &4773649781342592972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunPoint: {fileID: 8189379180995753804}
   _targetRaycaster: {fileID: 4773649781342592972}
+  _cameraController: {fileID: 4773649781342592975}
 --- !u!1 &7436163588811763885
 GameObject:
   m_ObjectHideFlags: 0

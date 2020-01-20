@@ -11,6 +11,7 @@ namespace Gameplay
     {
         [SerializeField] private Transform _gunPoint;
         [SerializeField] private TargetRaycaster _targetRaycaster;
+        [SerializeField] private CameraController _cameraController;
 
         private Gun _gun;
 
@@ -58,6 +59,7 @@ namespace Gameplay
                 plate.BlowUp();
                 
                 _gun.Shot();
+                _cameraController.ReturnCameraToStart();
             }
         }
     }

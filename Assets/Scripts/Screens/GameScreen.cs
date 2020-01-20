@@ -14,7 +14,7 @@ namespace Screens
         private void OnEnable()
         {
             EventsManager.Instance.Subscribe(EventKeys.OnPreparingUpdate, this);
-            EventsManager.Instance.Subscribe(EventKeys.PlateDestroy, this);
+            EventsManager.Instance.Subscribe(EventKeys.PlayerIsReady, this);
 
             foreach (Button launchButton in _launchButtons)
             {
@@ -25,7 +25,7 @@ namespace Screens
         private void OnDisable()
         {
             EventsManager.Instance.Unsubscribe(EventKeys.OnPreparingUpdate, this);
-            EventsManager.Instance.Unsubscribe(EventKeys.PlateDestroy, this);
+            EventsManager.Instance.Unsubscribe(EventKeys.PlayerIsReady, this);
         }
 
         public void OnEvent(string eventKey, params object[] pars)
@@ -36,7 +36,7 @@ namespace Screens
                     OnPreparingUpdated((float)pars[0]);
                     break;
                 
-                case EventKeys.PlateDestroy:
+                case EventKeys.PlayerIsReady:
                     SwitchLaunchButtonsVisibility(true);
                     break;
             }
